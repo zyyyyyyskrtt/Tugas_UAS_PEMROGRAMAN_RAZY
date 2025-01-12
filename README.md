@@ -7,5 +7,8 @@ Jurusan: Teknik Informatika <p>
 Mata Kuliah: Bahasa Pemrograman <p> 
 
 ## Penjelasan Program 
+1. Kelas TiketData
 
+         class TicketData:
+   - Di sini, kita mendefinisikan sebuah kelas bernama TicketData. Kelas ini akan berfungsi sebagai wadah untuk menyimpan informasi tentang tiket.
 
