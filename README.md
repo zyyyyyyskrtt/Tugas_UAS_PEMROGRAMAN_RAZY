@@ -79,5 +79,54 @@ Mata Kuliah: Bahasa Pemrograman <p>
                 main()
    - Kode ini memastikan bahwa fungsi main() hanya akan dijalankan jika file ini dieksekusi sebagai program utama, bukan jika diimpor sebagai modul di file lain.
 
+3. Kelas TicketProcess
+   Metode __init__
+
+            def __init__(self, data, view):
+                self.data = data
+                self.view = view
+   - Metode __init__ adalah konstruktor yang dipanggil saat objek dari kelas TicketProcess dibuat.
+   - data: Parameter ini diharapkan menjadi objek yang memiliki metode untuk mengelola data tiket, seperti menambahkan tiket dan mendapatkan daftar tiket.
+   - view: Parameter ini diharapkan menjadi objek yang memiliki metode untuk menangani input dan output tiket, seperti meminta input dari pengguna dan menampilkan tiket.
+   - self.data: Menyimpan referensi ke objek data yang diberikan.
+   - self.view: Menyimpan referensi ke objek tampilan yang diberikan.
+
+   Metode add_ticket
+
+            def add_ticket(self):
+                ticket = self.view.input_ticket()
+                if ticket:
+                    self.data.add_ticket(ticket)
+   - Metode ini digunakan untuk menambahkan tiket baru ke dalam sistem.
+   - Memanggil self.view.input_ticket() untuk meminta pengguna memasukkan informasi tiket (seperti nama penumpang dan tujuan).
+   - Jika input tiket valid (tidak None), maka tiket tersebut ditambahkan ke dalam data dengan memanggil self.data.add_ticket(ticket).
+
+    Metode show_tickets
+
+            def show_tickets(self):
+                tickets = self.data.get_tickets()
+                self.view.display_tickets(tickets)
+   - Metode ini digunakan untuk menampilkan semua tiket yang ada.
+   - Mengambil daftar tiket dari objek data dengan memanggil self.data.get_tickets().
+   - Menampilkan tiket yang diambil dengan memanggil self.view.display_tickets(tickets).
+
+   4. Kelas TicketView
+
+      def input_ticket(self):
+        try:
+            passenger_name = input("Masukkan nama penumpang: ")
+            if not passenger_name:
+                raise ValueError("Nama penumpang tidak boleh kosong")
+            
+            destination = input("Masukkan tujuan: ")
+            if not destination:
+                raise ValueError("Tujuan tidak boleh kosong")
+            
+            return {"passenger_name": passenger_name, "destination": destination}
+        except ValueError as e:
+            print(f"Input tidak valid: {e}")
+            return None
+     
+
    
 
