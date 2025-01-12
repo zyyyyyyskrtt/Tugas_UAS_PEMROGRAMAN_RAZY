@@ -24,5 +24,15 @@ Mata Kuliah: Bahasa Pemrograman <p>
                return self.tickets
    - Metode ini mengembalikan list tickets yang berisi semua tiket yang telah ditambahkan. Ini memungkinkan pengguna untuk mengakses semua tiket yang disimpan dalam objek         TicketData.
 
+2. main
+   a. Import Kelas
+
+            from data import TicketData
+            from process import TicketProcess
+            from view import TicketView
+   - TicketData: Kelas untuk mengelola data tiket.
+   - TicketProcess: Kelas untuk mengelola logika bisnis terkait tiket.
+   - TicketView: Kelas untuk menangani interaksi dengan pengguna.
+
    
 
