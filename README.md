@@ -110,22 +110,41 @@ Mata Kuliah: Bahasa Pemrograman <p>
    - Mengambil daftar tiket dari objek data dengan memanggil self.data.get_tickets().
    - Menampilkan tiket yang diambil dengan memanggil self.view.display_tickets(tickets).
 
-   4. Kelas TicketView
+4. Kelas TicketView
 
-      def input_ticket(self):
-        try:
-            passenger_name = input("Masukkan nama penumpang: ")
-            if not passenger_name:
-                raise ValueError("Nama penumpang tidak boleh kosong")
+            def input_ticket(self):
+                try:
+                   passenger_name = input("Masukkan nama penumpang: ")
+                   if not passenger_name:
+                       raise ValueError("Nama penumpang tidak boleh kosong")
             
-            destination = input("Masukkan tujuan: ")
-            if not destination:
-                raise ValueError("Tujuan tidak boleh kosong")
+                   destination = input("Masukkan tujuan: ")
+                   if not destination:
+                       raise ValueError("Tujuan tidak boleh kosong")
             
-            return {"passenger_name": passenger_name, "destination": destination}
-        except ValueError as e:
-            print(f"Input tidak valid: {e}")
-            return None
+                   return {"passenger_name": passenger_name, "destination": destination}
+            except ValueError as e:
+                print(f"Input tidak valid: {e}")
+                return None
+     - Fungsi: Metode ini bertujuan untuk meminta input dari pengguna mengenai nama penumpang dan tujuan perjalanan.
+     - Validasi Input: Nama penumpang tidak boleh kosong. Jika kosong, akan mengangkat ValueError dan Tujuan perjalanan tidak boleh kosong. Jika kosong, akan mengangkat            ValueError.
+     - Pengembalian Data: Jika input valid, metode ini mengembalikan sebuah dictionary yang berisi passenger_name dan destination. Jika input tidak valid, mengembalikan            None.
+
+   Metode display_tickets
+
+            def display_tickets(self, tickets):
+                print(f"{'Nama Penumpang':<20}{'Tujuan':<20}")
+                print("-" * 40)
+                for ticket in tickets:
+                    print(f"{ticket['passenger_name']:<20}{ticket['destination']:<20}")
+      - Fungsi: Metode ini bertujuan untuk menampilkan data tiket yang disimpan dalam format tabel.
+      - Parameter: Menerima tickets, yang merupakan daftar tiket dalam bentuk dictionary.
+      - Tampilan: Menampilkan header tabel dengan kolom "Nama Penumpang" dan "Tujuan", Menampilkan garis pemisah untuk memperjelas tampilan tabel, Melalui loop, menampilkan         setiap tiket dalam daftar tickets dalam format yang rapi.
+
+## Hasil Program 
+<img width="826" alt="gambar1" src="https://github.com/user-attachments/assets/ce8f86c7-4515-4eca-bc6f-ec13b0cd1eb7" />
+
+
      
 
    
