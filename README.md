@@ -25,7 +25,7 @@ Mata Kuliah: Bahasa Pemrograman <p>
    - Metode ini mengembalikan list tickets yang berisi semua tiket yang telah ditambahkan. Ini memungkinkan pengguna untuk mengakses semua tiket yang disimpan dalam objek         TicketData.
 
 2. main
-   a. Import Kelas
+   a. Import Kelas <p>
 
             from data import TicketData
             from process import TicketProcess
